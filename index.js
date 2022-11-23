@@ -17,7 +17,9 @@ app.use(express.json());
 app.use("/api/auth", authRoutes );
 
 app.use("/api/messages", messageRoutes);
-
+app.get("/", (req, res) =>
+  res.send(`Server Running`)
+);
 
 // mongodb connection
 mongoose.connect(process.env.MONGO_URL,{
